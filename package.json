@@ -1,0 +1,11 @@
+{
+  "name": "vuepress-aplayer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Runtus",
+  "license": "MIT",
+  "dependencies": {
+    "aplayer": "^1.10.1",
+    "vue-demi": "0.5.3"
+  }
+}

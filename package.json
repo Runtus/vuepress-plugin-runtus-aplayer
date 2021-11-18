@@ -1,9 +1,13 @@
 {
-  "name": "vuepress-aplayer",
+  "name": "vuepress-plugin-runtus-aplayer",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Runtus",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Runtus/vuepress-plugin-runtus-aplayer.git"
+  },
   "dependencies": {
     "aplayer": "^1.10.1",
     "vue-demi": "0.5.3"

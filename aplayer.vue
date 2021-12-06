@@ -6,15 +6,23 @@
 
 <script>
 import { defineComponent, getCurrentInstance, onMounted, ref } from 'vue-demi'
-import Aplayer from 'aplayer'
 import 'APlayer/dist/APlayer.min.css';
+
+// const AplayerFn = () => import('aplayer')
+
+
+
 
 export default defineComponent({
     name: 'Aplayer',
     setup() {
         const instance = getCurrentInstance().proxy;
         const positionRef = ref({})
-        onMounted(() => {
+        onMounted(async () => {
+
+            // const Aplayer = await AplayerFn()
+            
+           
             const audioSetting = instance.$page.audioSetting
             const {position, fixed = false} = audioSetting;
             // 原组件吸底配置优先级大于手动设置
@@ -22,10 +30,14 @@ export default defineComponent({
                 positionRef.value = position
             }
 
-            const ap = new Aplayer({
-                container: document.getElementById('player'),
-                ...audioSetting
-            }) 
+
+            if(instance.APlayer){
+                const ap = new instance.APlayer({
+                    container: window ? document.getElementById('player') : '',
+                    ...audioSetting
+                }) 
+            }
+            
         })
 
         return {
